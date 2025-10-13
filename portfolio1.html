@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+
+        }
+
+
+        .nav {
+            position: fixed;
+            z-index: 1000;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgb(160, 172, 215);
+            padding: 6px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .nav div a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav div a:hover {
+            color: rgb(103, 125, 235);
+        }
+
+        .sec {
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            height: 100vh;
+                     background: linear-gradient(to right, #3d0387, #ab4cca, #0d068b);
+
+
+        }
+
+        #aboutme {
+            /* background: linear-gradient(to right, #c093fe, #52e6e6); */
+        }
+
+        #aboutme>div {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        #aboutme>div>div {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .profile-pic img {
+
+            border-radius: 42px;
+            /* border: 8px solid rgb(140, 30, 30); */
+        }
+
+
+
+        section {
+            padding-top: 12px;
+        }
+        #education h2{
+            font-size: 44px;
+                padding-top: 34px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+        }
+         /* #education .skil h3{
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+
+        } */
+
+        #education {
+
+            color: white;
+            /* background: linear-gradient(to right, #9c5ff1, #52e6e6); */
+        }
+
+.eduDetail, .skil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+   /* Adjust width as needed */
+}
+#experience {
+            /* background: linear-gradient(to right, #7bafeb, #9cefef); */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+         #experience>div{
+            /* padding-left: 0%; */
+            padding: 70px;
+            color: white;
+        }
+           #experience>div h2{ 
+            font-size: 44px;
+            margin-bottom: 20px;
+        }
+        #projects {
+            /* background: linear-gradient(to right, #b589f3, #96fefe); */
+            display: flex;
+           
+        }
+         #projects>div{
+            list-style: none;
+            padding: 70px;
+            color: white;
+        }
+           #projects>div h2{ 
+            font-size: 44px;
+            margin-bottom: 20px;
+        }
+   #contacts {
+                /* background: linear-gradient(to right, #a877ed, #70eded); */
+
+          /* background-image: url('https://copilot.microsoft.com/th/id/BCO.a53c67a1-2fc3-41c5-9ac5-c4b0c75744b5.png'); */
+
+            display: flex;
+            align-items: center;
+            justify-content:space-around;
+           
+        }
+         #contacts>div{
+margin: 5px;
+           display: flex;
+       align-items: center;
+       flex-direction: column;
+            padding: 60px;
+            gap: 30px;
+            color: white;
+            list-style: none;
+        }
+           #contacts  h2{ 
+          
+            text-align: center;
+            font-size: 44px;
+            color: white;
+            margin-bottom: 20px;
+        }
+        #experience>div{
+            list-style: none;
+        }
+      
+          #experience ul, #projects ul{
+            margin: 30px;
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav">
+        <div><a href="#aboutme">About me</a></div>
+        <div><a href="#education">Education</a></div>
+        <div><a href="#experience">Experience</a></div>
+        <div><a href="#projects">Projects</a></div>
+        <div><a href="#contacts">Contacts</a></div>
+    </div>
+<div style="position:sticky; display: inline-block; top: 30px; background-color: aqua; border-radius: 12px;"><a style="text-decoration: none;" href="fillDetail.html"><span>Use this theme</span></a></div>
+    <section>
+        <div id="aboutme" class="sec ">
+            <div style="padding: 104px; color: white;">
+                <div>
+                    <span>Hello!!</span><br><br>
+                    <h2>I'm John Doe</h2>
+
+                    <span style="background-color: aqua;">Professional Content creater</span> <br><br><br>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit in mollitia repellendus aut
+                        cumque
+                        accusamus odit possimus impedit? At, officia laborum quisquam eos sapiente sequi totam
+                        reiciendis
+                        nihil odit facere veritatis maxime ad molestiae illo alias iure voluptas tenetur sint deleniti
+                        voluptatibus asperiores repudiandae ea.
+                    </div>
+                </div>
+                <div class="profile-pic">
+                    <img src="profile2.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div id="education" class="sec">
+            <h2 >Education & Skills</h2>
+            <div class="eduDetail">
+
+              <li style="list-style: none;">
+                    <p>High School's Name | Stream | year | Percentage</p>
+              
+                    <p>College name | Bachelor's degree | year | Percentage</p>
+               
+                    <p>College name | Master's Degree | year | Percentage</p>
+</li>
+            </div>
+            <div class="skil">
+                <h3>Skills</h3>
+            
+                    <ol>HTML</ol>
+                    <ol>CSS</ol>
+                    <ol>JAVASCRIPT</ol>
+                    <ol>PYTHON</ol>
+                    <ol>RUST</ol>
+             
+            </div>
+        </div>
+        <div id="experience" class="sec ">
+           
+        <div>
+            <h2>Experience & Achievements</h2>
+         <li>
+            <ul><p><b>exp1</b><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptas vitae neque facere, ex facilis. Praesentium quaerat odit illum optio recusandae nostrum omnis suscipit nobis perspiciatis quae ipsum, sint quasi!</p></p></ul>
+            <ul><p><b>exp1 </b><p>details</p></p></ul>
+            <ul><p><b>exp1</b><p>details</p></p></ul>
+            <ul><p><b>exp1</b><p>details</p></p></ul>
+         </li>
+        </div>
+        </div>
+        <div id="projects" class="sec">
+             <div>
+            <h2>Projects</h2>
+           <li>
+             <ul><p>p1<p>details</p></p></ul>
+            <ul><p>p2<p>details</p></p></ul>
+            <ul><p>p3<p>details</p></p></ul>
+            <ul><p>p4<p>details</p></p></ul>
+           </li>
+        </div>
+        </div>
+        <div id="contacts" class="sec">
+           <div> <h2>GET IN TOUCH </h2><hr>
+     <div>
+         <div><a href="tel:+1234567890">📞 Contact</a></div>
+        <div><a href="mailto:yourname@example.com">📧 Email</a></div>
+        <div><a href="https://linkedin.com/in/yourprofile">💼 LinkedIn</a></div>
+        <div><a href="https://github.com/yourusername">🐱 GitHub</a></div>
+        </div>
+    </section>
+</body>
+
+</html>
