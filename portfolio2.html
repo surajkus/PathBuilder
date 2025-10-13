@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleek Dev Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+
+:root {
+    --color-dark-bg: #0A0A10;
+    --color-card-bg: #1B1B25;
+    --color-primary: #8A2BE2; 
+    --color-secondary: #00FFFF; 
+    --color-text-light: #FFFFFF;
+    --color-text-secondary: #AAAAAA;
+    --font-family-base: 'Inter', sans-serif;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family-base);
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    scroll-behavior: smooth; 
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-secondary);
+}
+
+
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+
+    background: rgba(10, 10, 16, 0.95); 
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-secondary);
+}
+
+.sticky-nav nav a {
+    margin-left: 20px;
+    font-weight: 600;
+    color: var(--color-text-light);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.sticky-nav nav a:hover {
+    background-color: rgba(138, 43, 226, 0.1); 
+    color: var(--color-primary);
+}
+
+.btn-contact {
+    background-color: var(--color-primary);
+    color: var(--color-text-light) !important;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    margin-left: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: var(--color-primary);
+    box-shadow: 0 0 15px var(--color-primary); 
+    transform: translateY(-2px);
+}
+
+.content-section {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-text-light);
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    margin-top: 10px;
+}
+
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin: 20px 0 10px;
+}
+
+.hero-content .tagline {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 40px;
+}
+
+.avatar-glow {
+   
+    border-radius: 50%;
+    padding: 5px; 
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.5), inset 0 0 10px rgba(138, 43, 226, 0.5);
+    display: inline-block;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: var(--color-card-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    border: 3px solid var(--color-dark-bg);
+}
+
+.hero-actions .btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 6px;
+    margin: 0 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.hero-actions .btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+}
+
+.hero-actions .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px var(--color-primary);
+}
+
+.hero-actions .btn-secondary {
+    border: 2px solid var(--color-text-secondary);
+    color: var(--color-text-secondary);
+}
+
+.hero-actions .btn-secondary:hover {
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+    background-color: rgba(0, 255, 255, 0.05);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* .glow-card {
+    background-color: var(--color-card-bg);
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden; */
+/* } */
+
+/* The Key: Box Shadow for the Neon/Glow Effect */
+/* .glow-card:hover {
+    transform: translateY(-5px);
+    /* Subtle outer glow on hover */
+    /* box-shadow: 
+        0 0 5px rgba(138, 43, 226, 0.5), 
+        0 0 25px rgba(138, 43, 226, 0.4), 
+        0 0 50px rgba(138, 43, 226, 0.1); 
+    border-color: var(--color-primary);
+}  */
+
+.project-card h3 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: var(--color-primary);
+}
+
+.project-card .role {
+    color: var(--color-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: var(--color-text-secondary);
+    margin-bottom: 25px;
+}
+
+.card-link {
+    color: var(--color-primary);
+    font-weight: 600;
+    display: block;
+    width: max-content;
+}
+
+.contact-section {
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.contact-section .section-title {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-prompt {
+    font-size: 1.15rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 40px;
+}
+
+.btn-large {
+    font-size: 1.2rem;
+    padding: 15px 35px;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.social-links {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.social-link {
+    color: var(--color-text-secondary);
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: var(--color-secondary);
+}
+
+.dot {
+    color: var(--color-text-secondary);
+    margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .sticky-nav {
+        padding: 1rem 20px;
+    }
+
+    .sticky-nav nav a {
+        margin-left: 10px;
+        padding: 0.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-actions .btn-primary, .btn-secondary {
+        margin: 0;
+    }
+    
+    .sticky-nav nav {
+        display: none; 
+    }
+    
+    .logo {
+        flex-grow: 1; 
+        text-align: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <header class="sticky-nav">
+        <div class="logo">John Doe</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Work</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact" class="btn-contact">Contact</a>
+        </nav>
+    </header>
+<div style="position:sticky; display: inline-block; top: 30px; background-color: rgb(245, 245, 245); border-radius: 12px;"><a style="text-decoration: none;" href="fillDetail.html"><span>Use this theme</span></a></div>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="avatar-glow">
+                    <div class="avatar">JD</div> 
+                </div>
+                <h1>Hello, I'm John Doe</h1>
+                <p class="tagline">
+                    Full-Stack Engineer | Building elegant solutions from concept to launch.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn-primary">View Projects</a>
+                    <a href="#" class="btn-secondary">Download CV</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="content-section">
+            <h2 class="section-title"> Latest Projects</h2>
+            <div class="projects-grid">
+                <article class=" project-card">
+                    <h3>Project Nova</h3>
+                    <p class="role">Frontend Dev & UX Design</p>
+                    <p>A minimalist e-commerce platform built with React and Styled Components. Focused on speed and accessibility.</p>
+                    
+                </article>
+
+                <article class=" project-card">
+                    <h3>Data Dashboard</h3>
+                    <p class="role">Full-Stack Development</p>
+                    <p>Real-time analytics dashboard using Node.js, PostgreSQL, and D3.js for complex data visualization.</p>
+                </article>
+                
+                <article class=" project-card">
+                    <h3>Mobile App Concept</h3>
+                    <p class="role">UI/UX and Prototyping</p>
+                    <p>Figma prototype for a location-based social networking app, focusing on seamless user flow and interaction.</p>
+                    <!-- <a href="#" class="card-link">View Prototype &rarr;</a> -->
+                </article>
+            </div>
+        </section>
+         <section id="experience" class="content-section">
+            <h2 class="section-title"> Experience</h2>
+            <div class="projects-grid">
+                <article class=" project-card">
+                    <h3>Accenture</h3>
+                    <p class="role">Data Analysts </p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum nisi accusantium alias nemo, repudiandae dolore eos error modi voluptate delectus?</p>
+                </article>
+
+                <article class=" project-card">
+                    <h3>Google</h3>
+                    <p class="role">Junior Developer</p>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil pariatur nostrum aut, distinctio repellendus minima dicta perspiciatis sit labore tempora dolore, aliquid quis ullam eos et nisi possimus eligendi neque fuga molestiae aspernatur similique ducimus!</p>
+                </article>
+                
+                <article class=" project-card">
+                    <h3>Microsoft</h3>
+                    <p class="role">UI/UX Designer</p>
+                    <p>Figma prototype for a location-based social networking app, focusing on seamless user flow and interaction.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section contact-section">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-prompt">
+                Have a project or just want to chat? Send me an email and let's create something great.
+            </p>
+            <a href="mailto:your.email@example.com" class="btn-primary btn-large">your.email@example.com</a>
+            
+            <div class="social-links">
+                <a href="#" class="social-link">GitHub</a>
+                <span class="dot">&bull;</span>
+                <a href="#" class="social-link">LinkedIn</a>
+                <span class="dot">&bull;</span>
+                <a href="#" class="social-link">Twitter</a>
+            </div>
+        </section>
+    </main>
+
+   
+    
+</body>
+</html>
